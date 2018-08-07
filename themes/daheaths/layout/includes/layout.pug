@@ -1,0 +1,23 @@
+doctype html
+html(lang="zh-cn") 
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-COMpatible",content="IE-Edge")
+		meta(name="viewport",content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no")
+		meta(name="format-detection",content="telephone=no")
+		meta(name="format-detection",content="email=no")
+		meta(name="description",content=config.description)
+		meta(name="keywords",content=theme.keywords)
+		<!-- # {page.title}：显示source/about(或者join文件夹)/index.md的配置 -->
+		<!-- # {config.title}：显示_config.yml文件里的 title 属性 -->
+	if page.title
+		title #{page.title} | #{config.title}
+	else
+		title #{config.title}
+	include ./head.pug 
+	block head
+	body
+include ./header.pug
+block layout
+include ./footer.pug
+block footer

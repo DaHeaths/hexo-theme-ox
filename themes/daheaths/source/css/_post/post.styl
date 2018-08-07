@@ -1,0 +1,158 @@
+.note
+  width: 760px
+  height: auto
+  background: #fff
+  padding: 30px
+  margin: 20px auto
+
+.note .note-hd
+  margin-bottom:40px
+
+.note .note-hd .note-about
+  overflow: hidden
+
+.note-pic
+  width: 100%
+  margin: 0 auto
+  margin:10px auto
+  border-radius: 12px
+
+
+.note-title
+  color: #333
+  font-size: 24px
+  margin: 10px
+
+.note-about
+  margin-left: 10px
+.note-author
+  color: #20e3b2
+  font-weight: 600
+  margin-left:4px
+
+.note-date
+  margin-left: 4px
+
+.note-content
+  margin:20px auto
+
+.note-content img
+  width: 100%
+  margin: 10px auto
+
+.note-content blockquote
+  position: relative;
+  color: #999;
+  font-weight: 400;
+  border: 1px solid #eee;
+  border-left: 2px solid #1e90ff;
+  padding: 0.5em 1em;
+  margin: 1em 0;
+
+.note-content p
+  color: #333
+  font-size: 0.875rem
+
+.note-content h1
+  font-size: 1.5rem
+
+.note-content h2
+  font-size: 1.125rem
+
+.note-content h3
+  font-size: 1rem
+
+.note-content h4
+  font-size: 0.875rem
+
+.note-content h5
+  font-size: 0.75rem
+
+.note-content>table
+  margin: 20px 0
+  width: 100%
+  table-layout: fixed
+  word-wrap: break-word
+
+table thead th
+  background: #f1f1f1;
+  font-weight: 600;
+
+table caption,table td,table th
+  border: 1px solid #ddd;
+  padding: .5em 1em;
+  color: #333;
+
+.note-content h1,.note-content h2,.note-content h3,.note-content h4,
+.note-content h5,.note-content h6,.note-content p
+  margin:10px 0 10px
+
+.note-content ol
+  margin:0 10px
+/*源代码块样式 start*/
+.highlight, pre
+    background: #f7f7f7
+    margin: 10px 0
+    /* padding: 10px; */
+    overflow: auto
+    font-size: 12px!important
+    color: #4d4d4c
+    line-height: 1.6
+    background:#23241f
+
+.highlight .gutter pre
+  color: #666;
+  padding: 12px
+  border-right: 1px solid #666
+
+.highlight .line
+  height: 20px
+
+pre .function, pre .keyword
+  color: #ff4611
+
+/*源代码块样式 end*/
+
+/* 上一篇 and 下一篇 start */
+.oper-article
+  width: 820px
+  height: 40px
+  margin: 20px auto 100px
+
+.oper-article .article-prev
+  line-height: 40px
+  float: left
+
+.oper-article .article-next
+  line-height: 40px
+  float: right
+
+.oper-article svg
+  display: inline-block
+  vertical-align: middle
+
+.oper-article .article-title
+  color: #515151
+  font-weight: 600
+  display: inline-block
+  vertical-align: middle
+/* 上一篇 and 下一篇 end */
+
++ mobile() {
+  .note{
+    width: 100%
+    height: auto
+    margin: 0
+    padding: 0
+  }
+
+  .note-content h1,.note-content h2,.note-content h3,
+  .note-content h4,.note-content h5,.note-content h6,
+  .note-content p,.note-content ul li{
+      margin: 10px
+  }
+
+  .oper-article{
+    width: 100%
+  }
+}

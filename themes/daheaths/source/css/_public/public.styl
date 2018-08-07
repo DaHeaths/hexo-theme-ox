@@ -1,0 +1,271 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td
+ margin:0; padding:0;
+body, button, input, select, textarea
+	font:12px/1.5 PingFang SC,Lantinghei SC,Helvetica Neue,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans;
+h1, h2, h3, h4, h5, h6
+ font-size:100%;
+address, cite, dfn, em, var
+ font-style:normal;
+code, kbd, pre, samp
+ font-family:couriernew, courier, monospace;
+small
+ font-size:12px;
+ul, ol
+ list-style:none;
+a
+ word-break: break-all
+ color: #333
+ text-decoration:none;
+sup
+	vertical-align:text-top;
+sub
+   vertical-align:text-bottom;
+legend
+   color:#000;
+fieldset, img
+  border:0;
+button, select, textarea
+ font-size:100%;
+table
+ border-collapse:collapse; border-spacing:0;
+ span
+	display:block
+code
+  word-break: break-all
+/*公共样式 start*/
+body
+  background: #F6F5F5
+
+.pull-left
+	float:left
+
+.active
+  background: #00E0FF
+/*公共样式 end*/
+/*1、#A6FFCB, #12D8FA, #1FA2FF*/
+/*2、#1191D0, #42ADE2, #8DD8F8*/
+/*3、#2193b0, #6dd5ed*/
+/*4、#00c6ff, #0072ff*/
+
+$background =  #74F9FF
+$background = -webkit-linear-gradient(to right, #1FA2FF, #12D8FA, #A6FFCB);  /* Chrome 10-25, Safari 5.1-6 */
+$background = linear-gradient(to right, #1FA2FF, #12D8FA, #A6FFCB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+$color = #fff
+/* 选中文本的背景颜色 start */
+::selection{
+  color: $background
+}
+/* 选中文本的背景颜色 end */
+.topbar
+	width:100%
+	height:60px
+	background: $background;
+
+.topbar .header
+	width: 1200px
+	height:60px
+	margin:0 auto
+	position: relative
+ border-bottom: 1px solid #A6FFF2 
+
+.topbar .header .mainnav
+	position: absolute
+	left: 0
+	// border:1px solid #000
+
+.mainnav ul li
+	float:left
+.mainnav ul li .miannav-link
+	padding:20px
+	font-size: 14px
+	color:$color
+	display:block
+
+.mainnav ul li .miannav-link:hover
+  background: #00E0FF
+/*搜索框 start*/
+.topbar .header .read
+	width:100px
+	height:34px
+	position: absolute
+	right: 100px
+	top: 14px
+	border-radius: 18px
+
+.read .read-mode
+	width: 100px
+	height: 34px	
+ font-size: 14px
+ color: #1DA9FE
+ border: 1px solid #1DA9FE
+ display: block
+ border-radius: 18px
+ text-align: center
+ line-height: 34px
+.search .search-icon
+	width: 24px
+	height: 24px
+	vertical-align: middle
+	display: inline-block
+	margin-left:6px
+	cursor:pointer
+
+/*搜索框 end*/
+
+/*尾部版权 start*/
+.footer
+	width: 100%
+	height: 60px
+	background: #F8F8F8
+
+.footer .copyright
+	color: #333
+	text-align:center
+	line-height: 60px
+/*尾部版权 end*/
+
+/*子导航  start*/
+.subnav
+	width:1200px
+	height:40px
+	border:1px solid red
+	margin: 0 auto
+/*子导航 end*/
+
+/*导航栏图片 start*/
+.header-pic
+  background: $background
+  height: 300px;
+  overflow: hidden;
+/*移动端样式 start*/
+& .header .mod-nav
+  width:30px
+  height:30px
+  position: absolute
+  top: 14px
+  left:20px
+
+  display: none
+& .header .mod-soso
+  width:24px
+  height:24px
+  position:absolute
+  top:16px
+  right:20px
+  display:none
+
+  /*移动端导航栏样式*/
+.mobile-nav
+  width:200px
+  height:100%
+  background: rgba(0,0,0,.5)
+  position:fixed
+  top: 0
+  left: -200px
+  z-index: 999
+
+.close
+  width: 30px
+  height: 30px
+  position:absolute
+  top:14px
+  left:20px
+  border:1px solid #fff
+
+@keyframes move_right
+  from
+    opacity:1
+  to
+    opacity:1
+    -webkit-transform:translateX(200px)
+    transform:translateX(200px)
+@-webkit-keyframes move_right
+  from
+    opacity:1
+  to
+    opacity:1
+    -webkit-transform:translateX(200px)
+    transform:translateX(200px)
+.move_right
+		-webkit-animation-name:move_right;
+		animation-name:move_right;
+		-webkit-animation-duration:600ms;
+		animation-duration:600ms;
+		-webkit-animation-iteration-count:1;
+		animation-iteration-count:1;
+		-webkit-animation-fill-mode:forwards;
+		animation-fill-mode:forwards;
+
+@-webkit-keyframes move_left
+  from
+    opacity:1
+    left:0
+  to
+    opacity:1
+    -webkit-transform:translateX(0px)
+    transform:translate(0px)
+
+@keyframes move_left
+  from
+    opacity:1
+    left:0
+  to
+    opacity:1
+    -webkit-transform:translateX(0px)
+    transform:translateX(0px)
+
+.move_left
+  -webkit-animation-name:move_left
+  animation-name:move_left
+  -webkit-animation-duration: 600ms
+  animation-duration:600ms
+  -webkit-animation-iteration-count:1
+  animation-iteration-count:1
+  -webkit-animate-fill-mode:forwards
+  animation-fill-mode:forwards
+/*移动端样式 end*/
+
+mobile() {
+  @media (max-width: 1023px) {
+    {block}
+  }
+}
+
+desktop() {
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    {block}
+  }
+}
+
+desktop-large() {
+  @media (min-width: 1600px) {
+    {block}
+  }
+}
+
++ mobile() {
+
+  & .header{
+    width: 100% !important
+  }
+
+  & .header .mainnav{
+    display: none
+  }
+
+  & .header .mod-nav{
+    display:block
+  }
+
+  & .header .search{
+    display:none
+  }
+
+  & .header .mod-soso{
+    display:block
+  }
+  
+  & .header .read{
+    display: none
+  }
+}

@@ -1,0 +1,10 @@
+<!--分页数 start-->
+ul.page-oper
+	if page.prev
+		li
+			a(href=url_for(page.prev_link), class="page-prev") Prev
+
+	if page.next
+		li
+			a(href=url_for(page.next_link), class="page-next") Next
+<!--分页数 end-->

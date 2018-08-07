@@ -1,0 +1,5 @@
+extends ./includes/layout.pug
+block layout
+  div.note !{ partial('includes/post/main.pug',{post:page}) }
+  include includes/post/prevnext.pug
+block footer

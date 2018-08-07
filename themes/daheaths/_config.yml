@@ -1,0 +1,49 @@
+
+# html lang
+language: zh-cn
+
+# Miscelaneous
+favicon: /favicon.ico
+
+# stylesheets loaded in the <head>
+stylesheets:
+- css/daheaths.css
+- css/bath.css
+
+# scripts loaded in the end of the body
+scripts:
+- js/daheaths.js
+
+navication:
+- name: 文章
+  link: index.html
+- name: 关于
+  link: /about/index.html
+# - name: 团队
+#   link: /about/index.html
+# - name: 加入我们
+#   link: /join/index.html
+# - name: 开发规范
+#   link: /guide/index.html
+# - name: 技术周刊
+#   link: /weekly/index.html
+subnavication:
+- name: 推荐
+  link: /index.html
+- name: 前端
+  link: cates/FE/index.html
+- name: 视觉交互
+  link: /
+- name: 后端
+  link: /
+- name: 移动开发
+  link: /
+# - name: 用户研究
+#   link: /
+# - name: 资源工具
+#   link: /
+# - name: 团队杂谈
+#   link: /
+
+
+keywords: VOV技术团队博客,web开发,移动开发,交互设计,视觉设计,前端,后端

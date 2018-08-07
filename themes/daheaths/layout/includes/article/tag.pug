@@ -1,0 +1,9 @@
+<!--博文导航栏 start-->
+.blog-header
+	nav.blog-nav
+		ul
+			if theme.subnavication && theme.subnavication.length
+				each item in theme.subnavication
+					li
+						a(href=url_for(item.link), class="subnav-link") #{item.name}
+<!--博文导航栏 end-->

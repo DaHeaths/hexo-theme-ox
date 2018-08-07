@@ -1,0 +1,8 @@
+header.note-hd
+  h1.note-title #{post.title}
+  div.note-about
+    span.pull-left by
+    a(target="_blank", href=post.author.url, class="pull-left note-author" ) #{post.author.nick}
+    p(class="note-date pull-left") #{"on  " + date(post.date,'YYYY/M/D')}
+
+div.note-content !{page.content}
