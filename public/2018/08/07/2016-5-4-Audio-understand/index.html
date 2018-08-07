@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="zh-cn"> <head><meta charset="utf-8"><meta http-equiv="X-UA-COMpatible" content="IE-Edge"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"><meta name="format-detection" content="telephone=no"><meta name="format-detection" content="email=no"><meta name="description" content="愤怒的牛仔"><meta name="keywords" content="VOV技术团队博客,web开发,移动开发,交互设计,视觉设计,前端,后端"><!-- # {page.title}：显示source/about(或者join文件夹)/index.md的配置 -->
+<!-- # {config.title}：显示_config.yml文件里的 title 属性 --></head><title>Audio 之深入理解(上) | 愤怒的牛仔</title><link rel="stylesheet" href="/css/style.css"><link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet"><script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script><body></body></html><!--头部导航 start--><div class="topbar"><header class="header"><!--导航栏图标 start--><span class="mod-nav"><?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg t="1499842118450" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1010" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30">
+<defs><style type="text/css"></style></defs>
+<path d="M79.78 742.215h898.076v69.58h-898.076v-69.58zM79.78 475.945h898.076v69.551h-898.076v-69.551zM79.78 209.715h898.076v69.549h-898.076v-69.549z" p-id="1011" fill="#ffffff">
+</path>p
+</svg></span><!--导航栏图标 end--><div class="mainnav"><ul><li><a class="miannav-link" href="/index.html">文章</a></li><li><a class="miannav-link" href="/about/index.html">关于</a></li></ul></div><!--搜索图标 start--><span class="mod-soso"><?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1521384851953" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="742" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"><defs><style type="text/css"></style></defs><path d="M557.250088 959.028243c-247.490697 0-448.826192-199.306278-448.826192-446.783673 0-244.284679 198.73118-446.636317 443.002556-446.636317 0.119727 0 0.226151 0 0.346901 0 10.354835 0 19.840884 3.807722 24.477484 13.094226 4.688789 9.379625 3.593851 19.61371-2.805906 27.92398-53.604872 69.477374-81.928964 152.101163-81.928964 239.895719 0 217.308281 176.792519 393.82553 394.1008 393.82553l5.051039-0.239454c9.927093-0.134053 20.175505 5.638417 24.864294 15.043624 4.704139 9.379625 3.621481 20.603247-2.804882 28.91454C826.947554 895.269104 697.373453 959.028243 557.250088 959.028243zM497.340627 120.789017c-188.636265 29.113061-334.191338 193.506179-334.191338 389.410987 0 217.294978 176.792519 394.1008 394.1008 394.1008 104.550171 0 202.412013-40.456411 275.696086-112.540146-222.772736-26.1598-396.157645-216.07929-396.157645-445.747063C436.787506 265.754666 457.578018 188.916651 497.340627 120.789017z" p-id="743" fill="#ffffff"></path><path d="M577.719282 865.501126c-179.75806 0-332.640006-128.359436-363.490641-305.211307-1.296529-7.441483 3.687996-14.536065 11.129478-15.833617 7.54893-1.2689 14.537088 3.687996 15.832594 11.130502 28.55229 163.705456 170.09191 282.536888 336.52857 282.536888 7.563256 0 13.682627 6.119371 13.682627 13.681604C591.40191 859.381755 585.281515 865.501126 577.719282 865.501126z" p-id="744" fill="#ffffff"></path><path d="M222.886835 530.788925c-7.255241 0-13.307074-6.734378-13.654998-14.055111-0.306992-6.333242-0.467651-13.267165-0.467651-19.694551 0-7.562233 6.118348-13.935384 13.681604-13.935384s13.681604 5.998621 13.681604 13.560854c0 5.998621 0.160659 12.920264 0.441045 18.839067 0.361227 7.54893-5.464455 15.285125-13.013385 15.285125C223.326856 530.788925 223.112985 530.788925 222.886835 530.788925z" p-id="745" fill="#ffffff"></path><path d="M642.680806 310.140573c4.300956 12.746302-2.566452 26.587542-15.311731 30.890544-12.747325 4.288676-26.588565-2.565429-30.891568-15.325034-4.275373-12.746302 2.565429-26.575262 15.311731-30.877241C624.56317 290.525839 638.377804 297.394271 642.680806 310.140573z" p-id="746" fill="#ffffff"></path><path d="M801.146934 193.09788c4.275373 12.746302-2.565429 26.588565-15.337313 30.890544-12.747325 4.275373-26.561959-2.565429-30.864962-15.325034-4.300956-12.746302 2.566452-26.574239 15.311731-30.877241C783.003715 173.48417 796.844955 180.351578 801.146934 193.09788z" p-id="747" fill="#ffffff"></path><path d="M748.131487 411.503145c4.301979 12.759605-2.565429 26.588565-15.311731 30.890544-12.746302 4.288676-26.587542-2.565429-30.891568-15.311731-4.300956-12.746302 2.566452-26.587542 15.311731-30.890544C729.987245 391.889435 743.829508 398.756843 748.131487 411.503145z" p-id="748" fill="#ffffff"></path></svg></span><!--搜索图标 end-->
+<!--搜索框 start-->
+<!--搜索框 end--></header></div><!--头部导航 end-->
+<!--移动端导航栏 start--><div class="mobile-nav"><div class="close"><?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1500624902200" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="999" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30"><defs><style type="text/css"></style></defs><path d="M579.888 512l190.064-190.064C778.624 313.264 784 301.248 784 288c0-26.512-21.488-48-48-48-13.248 0-25.248 5.376-33.936 14.064L512 444.112 321.936 254.064C313.248 245.376 301.248 240 288 240c-26.512 0-48 21.488-48 48 0 13.248 5.376 25.248 14.064 33.936L444.112 512 254.064 702.064C245.376 710.752 240 722.752 240 736c0 26.512 21.488 48 48 48 13.248 0 25.248-5.376 33.936-14.064L512 579.888l190.064 190.064C710.752 778.624 722.752 784 736 784c26.512 0 48-21.488 48-48 0-13.248-5.376-25.248-14.064-33.936L579.888 512z" p-id="1000" fill="#ffffff"></path></svg></div><div class="a" href="javascript:;" style="width:30px;height:300px;border:1px soild red;word-wrap:break-word;color:#fff;font-size:24px;margin:48px;z-index:10000;zoom:1;">包子先生在努力开发中......</div></div><!--移动端导航栏 end--><script src="/js/daheaths.js"></script><div class="note"><header class="note-hd"><h1 class="note-title">Audio 之深入理解(上)</h1><div class="note-about"><span class="pull-left">by</span><a class="pull-left note-author" target="_blank">Daheaths</a><p class="note-date pull-left">on  2018/8/7</p></div></header><div class="note-content"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>选择你所喜欢的，爱你所选择的–列夫·托尔斯泰</p>
+</blockquote>
+<p><strong>愤怒的牛仔</strong></p>
+<h4 id="Audio"><a href="#Audio" class="headerlink" title="Audio"></a>Audio</h4><ul>
+<li>一个音乐有关的神秘人，今天让我们深入了解它。</li>
+</ul>
+<blockquote>
+<p>&lt; audio src=”MusicFile/斑马，斑马-宋东野.mp3” controls=”controls” &gt; &lt; /audio &gt;</p>
+</blockquote>
+<h4 id="Audio-支持浏览器"><a href="#Audio-支持浏览器" class="headerlink" title="Audio 支持浏览器"></a>Audio 支持浏览器</h4><table>
+<thead>
+<tr>
+<th>浏览器</th>
+<th>MP3</th>
+<th>Wav</th>
+<th>Ogg</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Internet Explorer 9+</td>
+<td>支持</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>Chrome 6+ (谷歌)</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>Firefox 3.6+ (火狐)</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>Safari 5+ (苹果)</td>
+<td>支持</td>
+<td>支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>OPera 10+ (欧朋)</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>edge</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>在浏览器不支持某种音频格式的情况下，可以使用 &lt; source &gt; 标签来选择一个音频格式和提示不支持<audio></audio></li>
+</ul>
+<blockquote>
+<p>&lt; audio controls &gt;<br>  &lt; source src=”斑马,斑马.ogg” type=”audio/ogg” &gt;<br>  &lt; source src=”斑马,斑马.mp3” type=”audio/mpeg” &gt;<br>  您的浏览器不支持 audio 元素。<br>  &lt; /audio &gt;</p>
+</blockquote>
+<p> 1.假如音频格式全不支持，则提示：您的浏览器不支持 audio 元素。<br> 2.假如支持其中一种音频格式，则播放支持的音频格式<br> 3.假如支持全部音频格式，则随机播放一种音频格式</p>
+<h6 id="注意：-lt-source-gt-标签支持的浏览器跟-lt-audio-gt-标签所支持的浏览器一样！"><a href="#注意：-lt-source-gt-标签支持的浏览器跟-lt-audio-gt-标签所支持的浏览器一样！" class="headerlink" title="注意：&lt; source &gt;标签支持的浏览器跟&lt; audio &gt;标签所支持的浏览器一样！"></a>注意：&lt; source &gt;标签支持的浏览器跟&lt; audio &gt;标签所支持的浏览器一样！</h6></div></div><div class="oper-article"><a class="article-prev" href="/2018/08/07/copy-paste/"><?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1507290610215" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2361" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"><defs><style type="text/css"></style></defs><path d="M305.866 532.207v0c1.777 3.079 3.079 6.39 5.802 9.112 0.594 0.477 1.064 0.827 1.539 1.303 0.709 0.594 0.946 1.539 1.54 2.128l331.383 319.434c8.757 8.519 20.121 12.781 31.483 12.781 11.836 0 23.79-4.733 32.666-13.964 17.398-18.107 16.924-46.871-1.183-64.265l-298.956-288.071 300.139-283.922c18.225-17.28 19.057-46.040 1.777-64.265-17.281-18.226-46.040-19.057-64.265-1.777l-334.462 316.355c-14.676 13.844-17.399 35.149-9.113 52.429 0.35 0.945 1.182 1.777 1.653 2.722v0zM305.866 532.207z" p-id="2362" fill="#515151"></path></svg><span class="article-title">JS 撸个复制网页内容，剪贴板里自动加上版权的小功能</span></a><a class="article-next" href="/2018/08/07/2016-12-26-Vue-build/"> <span class="article-title">Vue 开发环境的搭建</span><?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1507290652302" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2607" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"><defs><style type="text/css"></style></defs><path d="M718.134 491.79299999999995v0c-1.777000000000001-3.0789999999999997-3.0790000000000024-6.389999999999998-5.802000000000003-9.111999999999998-0.5940000000000001-0.47699999999999976-1.0640000000000005-0.8269999999999996-1.5390000000000004-1.3029999999999995-0.7090000000000001-0.5939999999999996-0.9460000000000002-1.5389999999999995-1.5400000000000007-2.1279999999999997l-331.38300000000004-319.4339999999999c-8.757-8.519-20.121000000000006-12.780999999999992-31.483000000000004-12.780999999999988-11.836000000000002 5.329070518200751e-15-23.789999999999992 4.733000000000008-32.66599999999999 13.964000000000006-17.39799999999999 18.107000000000003-16.92399999999998 46.871 1.1830000000000247 64.265l298.9560000000001 288.0709999999999-300.13899999999995 283.92200000000014c-18.224999999999998 17.28000000000001-19.056999999999988 46.040000000000006-1.7769999999999762 64.265 17.281000000000006 18.225999999999996 46.040000000000006 19.056999999999988 64.265 1.7769999999999762l334.4619999999999-316.3550000000002c14.675999999999991-13.844000000000005 17.398999999999983-35.149 9.112999999999982-52.429-0.35000000000000014-0.9449999999999997-1.1820000000000004-1.7769999999999995-1.653000000000001-2.7219999999999995v0zM718.134 491.79299999999995z" p-id="2608"></path></svg></a></div><div class="footer" style="clear:both;"><p class="copyright">Copyright © 2018 愤怒的牛仔 Rights Reserved</p></div>

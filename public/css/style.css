@@ -405,6 +405,7 @@ ul li .subnav-link {
   float: left;
   margin: 10px;
   position: relative;
+  border-radius: 8px;
 }
 .essay .essay-link .essay-pic {
   width: 100%;

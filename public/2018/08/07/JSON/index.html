@@ -1,0 +1,228 @@
+<!DOCTYPE html><html lang="zh-cn"> <head><meta charset="utf-8"><meta http-equiv="X-UA-COMpatible" content="IE-Edge"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"><meta name="format-detection" content="telephone=no"><meta name="format-detection" content="email=no"><meta name="description" content="愤怒的牛仔"><meta name="keywords" content="VOV技术团队博客,web开发,移动开发,交互设计,视觉设计,前端,后端"><!-- # {page.title}：显示source/about(或者join文件夹)/index.md的配置 -->
+<!-- # {config.title}：显示_config.yml文件里的 title 属性 --></head><title>初识JSON | 愤怒的牛仔</title><link rel="stylesheet" href="/css/style.css"><link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet"><script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script><body></body></html><!--头部导航 start--><div class="topbar"><header class="header"><!--导航栏图标 start--><span class="mod-nav"><?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg t="1499842118450" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1010" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30">
+<defs><style type="text/css"></style></defs>
+<path d="M79.78 742.215h898.076v69.58h-898.076v-69.58zM79.78 475.945h898.076v69.551h-898.076v-69.551zM79.78 209.715h898.076v69.549h-898.076v-69.549z" p-id="1011" fill="#ffffff">
+</path>p
+</svg></span><!--导航栏图标 end--><div class="mainnav"><ul><li><a class="miannav-link" href="/index.html">文章</a></li><li><a class="miannav-link" href="/about/index.html">关于</a></li></ul></div><!--搜索图标 start--><span class="mod-soso"><?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1521384851953" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="742" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"><defs><style type="text/css"></style></defs><path d="M557.250088 959.028243c-247.490697 0-448.826192-199.306278-448.826192-446.783673 0-244.284679 198.73118-446.636317 443.002556-446.636317 0.119727 0 0.226151 0 0.346901 0 10.354835 0 19.840884 3.807722 24.477484 13.094226 4.688789 9.379625 3.593851 19.61371-2.805906 27.92398-53.604872 69.477374-81.928964 152.101163-81.928964 239.895719 0 217.308281 176.792519 393.82553 394.1008 393.82553l5.051039-0.239454c9.927093-0.134053 20.175505 5.638417 24.864294 15.043624 4.704139 9.379625 3.621481 20.603247-2.804882 28.91454C826.947554 895.269104 697.373453 959.028243 557.250088 959.028243zM497.340627 120.789017c-188.636265 29.113061-334.191338 193.506179-334.191338 389.410987 0 217.294978 176.792519 394.1008 394.1008 394.1008 104.550171 0 202.412013-40.456411 275.696086-112.540146-222.772736-26.1598-396.157645-216.07929-396.157645-445.747063C436.787506 265.754666 457.578018 188.916651 497.340627 120.789017z" p-id="743" fill="#ffffff"></path><path d="M577.719282 865.501126c-179.75806 0-332.640006-128.359436-363.490641-305.211307-1.296529-7.441483 3.687996-14.536065 11.129478-15.833617 7.54893-1.2689 14.537088 3.687996 15.832594 11.130502 28.55229 163.705456 170.09191 282.536888 336.52857 282.536888 7.563256 0 13.682627 6.119371 13.682627 13.681604C591.40191 859.381755 585.281515 865.501126 577.719282 865.501126z" p-id="744" fill="#ffffff"></path><path d="M222.886835 530.788925c-7.255241 0-13.307074-6.734378-13.654998-14.055111-0.306992-6.333242-0.467651-13.267165-0.467651-19.694551 0-7.562233 6.118348-13.935384 13.681604-13.935384s13.681604 5.998621 13.681604 13.560854c0 5.998621 0.160659 12.920264 0.441045 18.839067 0.361227 7.54893-5.464455 15.285125-13.013385 15.285125C223.326856 530.788925 223.112985 530.788925 222.886835 530.788925z" p-id="745" fill="#ffffff"></path><path d="M642.680806 310.140573c4.300956 12.746302-2.566452 26.587542-15.311731 30.890544-12.747325 4.288676-26.588565-2.565429-30.891568-15.325034-4.275373-12.746302 2.565429-26.575262 15.311731-30.877241C624.56317 290.525839 638.377804 297.394271 642.680806 310.140573z" p-id="746" fill="#ffffff"></path><path d="M801.146934 193.09788c4.275373 12.746302-2.565429 26.588565-15.337313 30.890544-12.747325 4.275373-26.561959-2.565429-30.864962-15.325034-4.300956-12.746302 2.566452-26.574239 15.311731-30.877241C783.003715 173.48417 796.844955 180.351578 801.146934 193.09788z" p-id="747" fill="#ffffff"></path><path d="M748.131487 411.503145c4.301979 12.759605-2.565429 26.588565-15.311731 30.890544-12.746302 4.288676-26.587542-2.565429-30.891568-15.311731-4.300956-12.746302 2.566452-26.587542 15.311731-30.890544C729.987245 391.889435 743.829508 398.756843 748.131487 411.503145z" p-id="748" fill="#ffffff"></path></svg></span><!--搜索图标 end-->
+<!--搜索框 start-->
+<!--搜索框 end--></header></div><!--头部导航 end-->
+<!--移动端导航栏 start--><div class="mobile-nav"><div class="close"><?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1500624902200" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="999" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30"><defs><style type="text/css"></style></defs><path d="M579.888 512l190.064-190.064C778.624 313.264 784 301.248 784 288c0-26.512-21.488-48-48-48-13.248 0-25.248 5.376-33.936 14.064L512 444.112 321.936 254.064C313.248 245.376 301.248 240 288 240c-26.512 0-48 21.488-48 48 0 13.248 5.376 25.248 14.064 33.936L444.112 512 254.064 702.064C245.376 710.752 240 722.752 240 736c0 26.512 21.488 48 48 48 13.248 0 25.248-5.376 33.936-14.064L512 579.888l190.064 190.064C710.752 778.624 722.752 784 736 784c26.512 0 48-21.488 48-48 0-13.248-5.376-25.248-14.064-33.936L579.888 512z" p-id="1000" fill="#ffffff"></path></svg></div><div class="a" href="javascript:;" style="width:30px;height:300px;border:1px soild red;word-wrap:break-word;color:#fff;font-size:24px;margin:48px;z-index:10000;zoom:1;">包子先生在努力开发中......</div></div><!--移动端导航栏 end--><script src="/js/daheaths.js"></script><div class="note"><header class="note-hd"><h1 class="note-title">初识JSON</h1><div class="note-about"><span class="pull-left">by</span><a class="pull-left note-author" target="_blank">Daheaths</a><p class="note-date pull-left">on  2018/8/7</p></div></header><div class="note-content"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>爱生活、爱折腾！</p>
+</blockquote>
+<p><strong>愤怒的牛仔</strong></p>
+<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><blockquote>
+<p>JSON的全称是“JavaScript Object Notaion”, JSON 是一种语法用来序列化对象、数组、数值、字符串、布尔值和null,独立与语言之间的轻量级数据交换格式，类似XML,但比XML更小，更快，更易解析。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>JavaScript类型</th>
+<th>JSON</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>对象和数组</td>
+<td>属性名称必须是双引号字符串，最后一个属性后不能有逗号</td>
+</tr>
+<tr>
+<td>数值</td>
+<td>前导零是禁止的（在JSON.stringify 零将被忽略，但在JSON.parse它将抛出SyntaxError）,小数点后至少有一位数字</td>
+</tr>
+<tr>
+<td>字符串</td>
+<td>let code = ‘“\u2028\u2029”‘; <br> JSON.parse(code);  // 工作正常 <br> eval(code);  // 失败</td>
+</tr>
+<tr>
+<td></td>
+<td>只有有限的一些字符可能会被转义；禁止某些控制字符；Unicode 行分隔符 （U+2028）和段分隔符 （U+2029）被允许 ; 字符串必须是双引号。请参见以下示例，其中 JSON.parse() 能够正常解析，但把它当作JavaScript解析时会抛出 SyntaxError 错误：</td>
+</tr>
+</tbody>
+</table>
+<h3 id="两种表示结构"><a href="#两种表示结构" class="headerlink" title="两种表示结构"></a>两种表示结构</h3><ul>
+<li>对象是一个无序的“‘名称/值’对”集合。一个对象以{（左括号）开始，}（右括号）结束。每个“名称”后跟一个:（冒号）；“‘名称/值’ 对”之间使用,（逗号）分隔。</li>
+</ul>
+<pre><code class="Javascript">{
+    &quot;name&quot;: &quot;Daheaths&quot;,
+    &quot;age&quot;: &quot;21&quot;,
+    &quot;sex&quot;: &quot;boy&quot;
+}
+</code></pre>
+<ul>
+<li>数组是值（value）的有序集合。一个数组以[（左中括号）开始，]（右中括号）结束。值之间使用,（逗号）分隔。</li>
+</ul>
+<pre><code class="Javascript">[
+    {
+        key1:value1,
+        key2:value2
+    },
+    {
+         key3:value3,
+         key4:value4   
+    }
+]
+</code></pre>
+<p><strong>注意：</strong> 无效的空格可能存在于JSONNumber（数字必须不包含空格）或JSONString（其中它被解释为字符串中的相应字符，否则将导致错误）之外的任何位置。制表符（U+0009），回车（U+000D），换行（U+0020）和空格（U+0020）字符是唯一有效的空格字符。</p>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><ul>
+<li><p>JSON.parse(text[, reviver]) <br><br>  &nbsp;&nbsp;&nbsp;  解析一个JSON 字符串，可选地转换生成的值及其属性，并返回值：JSON对象。</p>
+</li>
+<li><p>JSON.stringify(value[, replacer [, space]]) <br><br>  &nbsp;&nbsp;&nbsp;<br>  返回与指定值相对应的一个JSON字符串，可选择某些属性或者用户自定义的方式替换属性值。</p>
+</li>
+<li><p>eval()方法 存在性能和安全问题不建议使用</p>
+</li>
+</ul>
+<blockquote>
+<p>JSON对象不被旧版本浏览器支持。你可以把下面代码放到脚本的开始位置，这样就可以在那些没有原生支持 JSON 对象的浏览器（如IE6）中使用 JSON对象。</p>
+</blockquote>
+<pre><code class="Javascript">
+if (!window.JSON) {
+  window.JSON = {
+    parse: function(sJSON) { return eval(&#39;(&#39; + sJSON + &#39;)&#39;); },
+    stringify: (function () {
+      var toString = Object.prototype.toString;
+      var isArray = Array.isArray || function (a) { return toString.call(a) === &#39;[object Array]&#39;; };
+      var escMap = {&#39;&quot;&#39;: &#39;\\&quot;&#39;, &#39;\\&#39;: &#39;\\\\&#39;, &#39;\b&#39;: &#39;\\b&#39;, &#39;\f&#39;: &#39;\\f&#39;, &#39;\n&#39;: &#39;\\n&#39;, &#39;\r&#39;: &#39;\\r&#39;, &#39;\t&#39;: &#39;\\t&#39;};
+      var escFunc = function (m) { return escMap[m] || &#39;\\u&#39; + (m.charCodeAt(0) + 0x10000).toString(16).substr(1); };
+      var escRE = /[\\&quot;\u0000-\u001F\u2028\u2029]/g;
+      return function stringify(value) {
+        if (value == null) {
+          return &#39;null&#39;;
+        } else if (typeof value === &#39;number&#39;) {
+          return isFinite(value) ? value.toString() : &#39;null&#39;;
+        } else if (typeof value === &#39;boolean&#39;) {
+          return value.toString();
+        } else if (typeof value === &#39;object&#39;) {
+          if (typeof value.toJSON === &#39;function&#39;) {
+            return stringify(value.toJSON());
+          } else if (isArray(value)) {
+            var res = &#39;[&#39;;
+            for (var i = 0; i &lt; value.length; i++)
+              res += (i ? &#39;, &#39; : &#39;&#39;) + stringify(value[i]);
+            return res + &#39;]&#39;;
+          } else if (toString.call(value) === &#39;[object Object]&#39;) {
+            var tmp = [];
+            for (var k in value) {
+              if (value.hasOwnProperty(k))
+                tmp.push(stringify(k) + &#39;: &#39; + stringify(value[k]));
+            }
+            return &#39;{&#39; + tmp.join(&#39;, &#39;) + &#39;}&#39;;
+          }
+        }
+        return &#39;&quot;&#39; + value.toString().replace(escRE, escFunc) + &#39;&quot;&#39;;
+      };
+    })()
+  };
+}
+</code></pre>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
+<li>占带宽小（格式是压缩的）</li>
+<li>与XML相比，易于理解、快速解析</li>
+<li>支持多种语言，比如Java、PHP、Golang、ruby、Python等语言结合使用，便于服务端的解析</li>
+</ul>
+<h3 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h3><h4 id="PC"><a href="#PC" class="headerlink" title="PC"></a>PC</h4><table>
+<thead>
+<tr>
+<th>浏览器</th>
+<th>Chrome</th>
+<th>Edge</th>
+<th>Firefox</th>
+<th>Internet Explorer</th>
+<th>Opera</th>
+<th>Safari</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Basic Support</td>
+<td>(Yes)</td>
+<td>(Yes)</td>
+<td>3.5</td>
+<td>8</td>
+<td>10.5</td>
+<td>4</td>
+</tr>
+<tr>
+<td>parse</td>
+<td>(Yes)</td>
+<td>(Yes)</td>
+<td>3.5</td>
+<td>8</td>
+<td>10.5</td>
+<td>4</td>
+</tr>
+<tr>
+<td>stringify</td>
+<td>(Yes)</td>
+<td>(Yes)</td>
+<td>3.5</td>
+<td>8</td>
+<td>10.5</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Mobile"><a href="#Mobile" class="headerlink" title="Mobile"></a>Mobile</h4><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Android</th>
+<th>Chrome for Android</th>
+<th>Edge mobile    Firefox for Android</th>
+<th>IE mobile    Opera</th>
+<th>Android</th>
+<th>iOS Safari</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Basic Support |    (Yes) |    (Yes) |    (Yes) |    4 |    (Yes) |    (Yes) |    (Yes) |<br>parse |    (Yes) |    (Yes) |    (Yes) |    4 |    (Yes) |    (Yes) |    (Yes) |<br>stringify | (Yes) |    (Yes) |    (Yes) |    4 |    (Yes) |    (Yes) |    (Yes) |</p>
+<pre><code class="Javascript">let Obj = {
+    name: &quot;Daheaths&quot;,
+    age: &quot;21&quot;,
+    hobby: [&quot;运动&quot;,&quot;生活&quot;,&quot;美食&quot;,&quot;旅游&quot;,&quot;摄影&quot;],
+    job: &quot;Web 全栈开发&quot;,
+    address: &quot;GuangDong ShanTou&quot;
+}
+
+let jsonStr = JSON.stringify(Obj) // 将JSON对象转换为JSON字符串
+let jsonObj = JSON.parse(jsonStr) // 将JSON字符串转换为JSON对象
+
+console.log(jsonStr) // =&gt; {&quot;name&quot;:&quot;Daheaths&quot;,&quot;age&quot;:&quot;21&quot;,&quot;hobby&quot;:[&quot;运动&quot;,&quot;生活&quot;,&quot;美食&quot;,&quot;旅游&quot;,&quot;摄影&quot;],&quot;job&quot;:&quot;Web 全栈开发&quot;,&quot;address&quot;:&quot;GuangDong ShanTou&quot;}
+console.log(&quot;\n&quot;);
+
+console.log(jsonObj) //{name: &quot;Daheaths&quot;, age: &quot;21&quot;, hobby: Array(5), job: &quot;Web 全栈开发&quot;, address: &quot;GuangDong ShanTou&quot;}address: &quot;GuangDong ShanTou&quot;age: &quot;21&quot;hobby: Array(5)0: &quot;运动&quot;1: &quot;生活&quot;2: &quot;美食&quot;3: &quot;旅游&quot;4: &quot;摄影&quot;length: 5__proto__: Array(0)job: &quot;Web 全栈开发&quot;name: &quot;Daheaths&quot;__proto__: Object
+console.log(&quot;\n&quot;);
+
+for(let item in jsonObj){
+    console.log( item + &quot;：&quot; + jsonObj[item] )
+}
+console.log(&quot;\n&quot;)
+
+var Name = jsonObj.name
+console.log(Name)
+console.log(&quot;\n&quot;)
+
+// 新增
+jsonObj.blog = &quot;http://daheaths.github.io&quot;
+console.log(jsonObj)
+console.log(&quot;\n&quot;)
+
+// 修改
+jsonObj.blog = &quot;http://www.vovteam.com&quot;
+console.log(jsonObj)
+console.log(&quot;\n&quot;)
+
+delete jsonObj.job
+console.log(jsonObj)
+</code></pre>
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><ul>
+<li><a href="http://www.json.org/json-zh.html" target="_blank" rel="external">http://www.json.org/json-zh.html</a></li>
+<li>MDN</li>
+</ul>
+</div></div><div class="oper-article"><a class="article-prev" href="/2018/08/07/NPM-learn/"><?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1507290610215" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2361" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"><defs><style type="text/css"></style></defs><path d="M305.866 532.207v0c1.777 3.079 3.079 6.39 5.802 9.112 0.594 0.477 1.064 0.827 1.539 1.303 0.709 0.594 0.946 1.539 1.54 2.128l331.383 319.434c8.757 8.519 20.121 12.781 31.483 12.781 11.836 0 23.79-4.733 32.666-13.964 17.398-18.107 16.924-46.871-1.183-64.265l-298.956-288.071 300.139-283.922c18.225-17.28 19.057-46.040 1.777-64.265-17.281-18.226-46.040-19.057-64.265-1.777l-334.462 316.355c-14.676 13.844-17.399 35.149-9.113 52.429 0.35 0.945 1.182 1.777 1.653 2.722v0zM305.866 532.207z" p-id="2362" fill="#515151"></path></svg><span class="article-title">NPM 入门指南</span></a><a class="article-next" href="/2018/08/07/create-musicplay/"> <span class="article-title">简单模仿豆瓣FM的播放器(PC端)</span><?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1507290652302" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2607" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24"><defs><style type="text/css"></style></defs><path d="M718.134 491.79299999999995v0c-1.777000000000001-3.0789999999999997-3.0790000000000024-6.389999999999998-5.802000000000003-9.111999999999998-0.5940000000000001-0.47699999999999976-1.0640000000000005-0.8269999999999996-1.5390000000000004-1.3029999999999995-0.7090000000000001-0.5939999999999996-0.9460000000000002-1.5389999999999995-1.5400000000000007-2.1279999999999997l-331.38300000000004-319.4339999999999c-8.757-8.519-20.121000000000006-12.780999999999992-31.483000000000004-12.780999999999988-11.836000000000002 5.329070518200751e-15-23.789999999999992 4.733000000000008-32.66599999999999 13.964000000000006-17.39799999999999 18.107000000000003-16.92399999999998 46.871 1.1830000000000247 64.265l298.9560000000001 288.0709999999999-300.13899999999995 283.92200000000014c-18.224999999999998 17.28000000000001-19.056999999999988 46.040000000000006-1.7769999999999762 64.265 17.281000000000006 18.225999999999996 46.040000000000006 19.056999999999988 64.265 1.7769999999999762l334.4619999999999-316.3550000000002c14.675999999999991-13.844000000000005 17.398999999999983-35.149 9.112999999999982-52.429-0.35000000000000014-0.9449999999999997-1.1820000000000004-1.7769999999999995-1.653000000000001-2.7219999999999995v0zM718.134 491.79299999999995z" p-id="2608"></path></svg></a></div><div class="footer" style="clear:both;"><p class="copyright">Copyright © 2018 愤怒的牛仔 Rights Reserved</p></div>
